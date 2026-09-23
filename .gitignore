@@ -3,3 +3,4 @@ _preview.html
 
 .vercel
 .env*
+__pycache__/

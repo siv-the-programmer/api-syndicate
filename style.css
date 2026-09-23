@@ -49,57 +49,100 @@ h1, h2 { color: var(--text-strong); letter-spacing: -.03em; line-height: 1.1; }
 .photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0 -20px 32px; }
 .photos img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; filter: grayscale(100%) brightness(.85); }
 
-.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 40px; }
-.tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; display: flex; flex-direction: column; gap: 4px; }
-.tile h2 { font-size: 17px; }
-.tile p { font-size: 14px; color: var(--text-muted); flex-grow: 1; }
-.soon { align-self: flex-start; margin-top: 8px; font-family: "DM Mono", monospace; font-size: 11.5px; color: var(--accent); border: 1px solid rgba(138,191,60,.35); background: rgba(138,191,60,.09); border-radius: var(--radius); padding: 2px 7px; }
-
+.small-head { font-size: 13px; font-family: "DM Mono", monospace; font-weight: 400; color: var(--text-muted); letter-spacing: 0; margin-bottom: 10px; }
+.tiles-wrap { margin-bottom: 40px; }
+.tiles { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px 16px; display: grid; grid-template-columns: 1fr auto; column-gap: 12px; align-items: center; }
+.tile h2 { font-size: 16px; }
+.tile p { grid-column: 1; font-size: 14px; color: var(--text-muted); }
+.soon { grid-column: 2; grid-row: 1 / span 2; font-family: "DM Mono", monospace; font-size: 11.5px; color: var(--accent); border: 1px solid rgba(138,191,60,.35); background: rgba(138,191,60,.09); border-radius: var(--radius); padding: 2px 7px; white-space: nowrap; }
 
 footer { border-top: 1px solid var(--border); padding: 20px 0 28px; font-size: 13px; color: var(--text-muted); }
 footer a { color: var(--text); }
 
-.tile-link { border-color: rgba(138,191,60,.35); transition: border-color .15s, background .15s; }
-.tile-link:hover { border-color: var(--accent); background: #151a14; }
-.go { margin-top: 8px; font-size: 13.5px; font-weight: 700; color: var(--accent); }
+.go { font-size: 13.5px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+.muted { color: var(--text-muted); font-size: 14px; }
 
-/* ---------- Courses page ---------- */
+/* ---------- Course cards (home + list) ---------- */
+.home-courses { margin-bottom: 40px; }
+.home-courses-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
+.home-courses-head h2 { font-size: 26px; }
+.course-grid { display: grid; gap: 10px; }
+.course-card { display: flex; flex-direction: column; gap: 6px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 18px 16px; transition: border-color .15s, background .15s; }
+.course-card:hover { border-color: rgba(138,191,60,.5); background: #13171a; }
+.level { font-family: "DM Mono", monospace; font-size: 12px; color: var(--accent); }
+.course-card h3 { font-size: 18px; color: var(--text-strong); letter-spacing: -.02em; line-height: 1.2; }
+.course-card p { font-size: 14px; color: var(--text-muted); flex-grow: 1; }
+.card-row { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+.price { font-family: "DM Mono", monospace; font-size: 16px; color: var(--text-strong); }
+
+/* ---------- Course pages ---------- */
 .top-row { display: flex; align-items: center; justify-content: space-between; }
 .back { font-size: 14px; color: var(--text-muted); padding: 10px 0 10px 12px; }
 .back:hover { color: var(--text-strong); }
-.page-intro { padding: 28px 0 28px; }
-.page-intro h1 { font-size: clamp(2.2rem, 10vw, 3.4rem); margin-bottom: 12px; }
-.page-intro p { max-width: 520px; }
-.courses { display: grid; gap: 14px; margin-bottom: 36px; }
-.course { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: grid; gap: 16px; }
-.level { display: inline-block; font-family: "DM Mono", monospace; font-size: 12px; color: var(--accent); margin-bottom: 6px; }
-.course h2 { font-size: 22px; margin-bottom: 6px; }
-.course-head p { font-size: 15px; }
-.facts { display: grid; border: 1px solid var(--border); border-radius: var(--radius-md); }
-.facts > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.page-intro { padding: 28px 0; }
+.page-intro h1 { font-size: clamp(2.1rem, 9vw, 3.2rem); margin-bottom: 12px; }
+.page-intro p { max-width: 560px; font-size: 17px; }
+.course-grid + .note, .page-intro + .course-grid { margin-top: 0; }
+.page-intro + .course-grid { margin-bottom: 36px; }
+
+.enrol-box { display: grid; gap: 14px; margin-bottom: 36px; }
+.facts { display: grid; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); }
+.facts > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 11px 14px; border-bottom: 1px solid var(--border); font-size: 14.5px; }
 .facts > div:last-child { border-bottom: 0; }
 .facts dt { color: var(--text-muted); }
 .facts dd { color: var(--text-strong); }
-details { border-top: 1px solid var(--border); padding-top: 12px; }
-summary { cursor: pointer; font-weight: 700; color: var(--text-strong); font-size: 15px; list-style: none; display: flex; align-items: center; justify-content: space-between; min-height: 36px; }
-summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; font-family: "DM Mono", monospace; font-size: 18px; color: var(--accent); }
-details[open] summary::after { content: "−"; }
-.outline { list-style: none; margin-top: 8px; display: grid; }
-.outline li { display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; }
-.outline li:last-child { border-bottom: 0; }
-.outline b { font-family: "DM Mono", monospace; font-weight: 400; font-size: 12.5px; color: var(--text-muted); padding-top: 2px; }
-.course .btn { width: 100%; }
+.price-lg { font-family: "DM Mono", monospace; color: var(--accent); font-size: 1.1em; }
+
+.block { border-top: 1px solid var(--border); padding: 28px 0; }
+.block h2 { font-size: 22px; margin-bottom: 12px; }
+.block > p { max-width: 620px; }
+.two-col { display: grid; gap: 28px; }
+.ticks, .dots { list-style: none; display: grid; gap: 8px; }
+.ticks li, .dots li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
+.ticks li::before { content: ""; width: 16px; height: 16px; margin-top: 4px; border-radius: 50%; border: 1px solid rgba(138,191,60,.35); background: rgba(138,191,60,.09) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238ABF3C' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center / 10px no-repeat; }
+.dots li::before { content: ""; width: 6px; height: 6px; margin: 10px 0 0 5px; border-radius: 1px; background: var(--accent); }
+
+details summary { cursor: pointer; list-style: none; }
+details summary::-webkit-details-marker { display: none; }
+.week { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); margin-top: 10px; }
+.week summary { display: grid; grid-template-columns: 64px 1fr 20px; align-items: center; gap: 8px; padding: 14px 16px; min-height: 52px; }
+.week summary::after, .faq summary::after { content: "+"; font-family: "DM Mono", monospace; font-size: 18px; color: var(--accent); text-align: right; }
+.week[open] summary::after, .faq[open] summary::after { content: "−"; }
+.wk { font-family: "DM Mono", monospace; font-size: 12.5px; color: var(--text-muted); }
+.wk-title { font-weight: 700; color: var(--text-strong); font-size: 15.5px; line-height: 1.3; }
+.week-body { padding: 0 16px 16px; border-top: 1px solid var(--border); }
+.goal { padding: 14px 0 6px; color: var(--text-strong); font-size: 15px; }
+.lessons { list-style: none; display: grid; }
+.lessons li { display: grid; grid-template-columns: 38px 1fr; gap: 8px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.lessons li b { font-family: "DM Mono", monospace; font-weight: 400; font-size: 12.5px; color: var(--accent); padding-top: 3px; }
+.lessons h4 { color: var(--text-strong); font-size: 15px; letter-spacing: -.01em; margin-bottom: 2px; }
+.lessons p { font-size: 14px; color: var(--text); }
+.week-tasks { display: grid; gap: 10px; margin-top: 14px; }
+.week-tasks > div { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 10px 12px; }
+.week-tasks dt { font-family: "DM Mono", monospace; font-size: 12px; color: var(--text-muted); margin-bottom: 2px; }
+.week-tasks dd { font-size: 14px; color: var(--text-strong); }
+
+.faq { border-bottom: 1px solid var(--border); }
+.faq summary { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 14px 0; font-weight: 700; color: var(--text-strong); font-size: 15px; min-height: 48px; }
+.faq p { padding: 0 0 14px; font-size: 14.5px; max-width: 620px; }
+
+.enrol-end { border-top: 1px solid var(--border); padding: 28px 0 40px; display: grid; gap: 10px; }
+.enrol-end h2 { font-size: 22px; }
 .note { border-top: 1px solid var(--border); padding: 28px 0 36px; }
 .note h2 { font-size: 20px; margin-bottom: 8px; }
-.note p { margin-bottom: 16px; max-width: 520px; }
+.note p { margin-bottom: 16px; max-width: 560px; }
 
 @media (min-width: 720px) {
   .hero { padding: 64px 0 48px; }
   .actions { display: flex; flex-wrap: wrap; }
   .photos { margin: 0 0 40px; border-radius: var(--radius-md); overflow: hidden; }
-  .tiles { grid-template-columns: repeat(4, 1fr); }
-  .courses { grid-template-columns: 1fr 1fr; }
-  .course .btn, .note .btn { width: auto; justify-self: start; }
-  .note .btn { display: inline-flex; }
+  .tiles { grid-template-columns: repeat(3, 1fr); }
+  .tile { grid-template-columns: 1fr; align-items: start; gap: 4px; }
+  .soon { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 8px; }
+  .course-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .two-col { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .enrol-box { grid-template-columns: 1fr auto; align-items: end; }
+  .enrol-box .btn, .enrol-end .btn, .note .btn { justify-self: start; display: inline-flex; }
+  .week-tasks { grid-template-columns: 1fr 1fr; }
 }
