@@ -1,11 +1,9 @@
 # API Syndicate
 
-Street division of [BuildsByBuchanan](https://buildsbybuchanan.com), Cape Town. This is a static site for merch, courses, fitness and lifestyle.
+A one-page landing site for API Syndicate, the street division of [BuildsByBuchanan](https://buildsbybuchanan.com) in Cape Town. People reach it by scanning the QR codes handed out at flash mobs.
 
-- `index.html`: page structure
-- `style.css`: all styling
-- `app.js`: product, course and program data, plus the cart, lightbox, countdown and forms
-- `img/`: self-hosted photography from Unsplash
+- `index.html`: the page
+- `style.css`: styles, using BuildsByBuchanan's brand (DM Sans / DM Mono, #8ABF3C)
+- `img/`: crew photos from Unsplash (`img/sm/` has the 640px versions for phones)
 
-Orders and access-key requests go to WhatsApp (+27 79 268 6620) or info@buildsbybuchanan.com. There is no backend.
-To edit products, prices or photos, change the `PRODUCTS`, `COURSES`, `PROGRAMS` and `MOB` arrays at the top of `app.js`.
+Contact buttons go to WhatsApp (+27 79 268 6620) and info@buildsbybuchanan.com.

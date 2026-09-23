@@ -3,463 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>API Syndicate | Cape Town | BuildsByBuchanan</title>
-  <meta name="description" content="API Syndicate is the street division of BuildsByBuchanan in Cape Town: streetwear, software engineering courses, training programs and custom software.">
+  <title>API Syndicate | BuildsByBuchanan</title>
+  <meta name="description" content="API Syndicate, the street division of BuildsByBuchanan in Cape Town.">
   <meta name="theme-color" content="#080A0C">
   <meta property="og:title" content="API Syndicate by BuildsByBuchanan">
-  <meta property="og:description" content="Streetwear, engineering courses, training and software. Cape Town.">
+  <meta property="og:description" content="You found us. We build what they can't.">
   <meta property="og:image" content="img/mob2.jpg">
   <link rel="icon" type="image/png" href="assets/bbb-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h8.9a1 1 0 0 0 1-.8L20 8H6.2"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></symbol>
-    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><path d="M15.5 4.9a3.2 3.2 0 0 1 0 6.2M17.5 14.3c2.1.6 3.5 2.4 3.5 5.2"/></symbol>
-    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3.5 3.5 6.5l2 4 2-1V20.5h9V9.5l2 1 2-4L16 3.5c-.8 1.5-2.2 2.3-4 2.3S8.8 5 8 3.5Z"/></symbol>
-    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8.5 7.5-5 4.5 5 4.5M15.5 7.5l5 4.5-5 4.5M13.5 5l-3 14"/></symbol>
-    <symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2.5-6 5 12 2.5-6h4"/></symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></symbol>
-    <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7Z"/></symbol>
-    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
-    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.4-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></symbol>
-    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.2-3.8A8 8 0 1 1 8 19Z"/><path d="M9 8.5c0 3.5 2.5 6.5 6.5 6.5l1-1.6-2-1-1 .9c-1.2-.5-2.3-1.6-2.8-2.8l.9-1-1-2Z"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
-  </svg>
-
-  <div class="overlay-backdrop" id="backdrop"></div>
-
-  <!-- Header -->
-  <header class="site-header" id="top">
-    <div class="nav-container">
-      <a href="#top" class="brand" aria-label="API Syndicate home">
-        <img src="assets/bbb-mark.png" alt="" width="30" height="30" class="brand-mark">
-        <span class="brand-text">
-          <span class="brand-name">API <em>Syndicate</em></span>
-          <span class="brand-sub">by BuildsByBuchanan</span>
-        </span>
-      </a>
-
-      <nav class="main-nav" aria-label="Sections">
-        <a href="#mob">The Mob</a>
-        <a href="#merch">Merch</a>
-        <a href="#academy">Academy</a>
-        <a href="#fitness">Fitness</a>
-        <a href="#lifestyle">Lifestyle</a>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="#access" class="btn btn-primary btn-sm nav-cta">Start a project</a>
-        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
-          <svg class="ico"><use href="#i-cart"/></svg>
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-      </div>
-    </div>
+  <header class="top">
+    <a href="https://buildsbybuchanan.com" class="brand" target="_blank" rel="noopener">
+      <img src="assets/bbb-mark.png" alt="" width="32" height="32">
+      <span><b>API <em>Syndicate</em></b><small>by BuildsByBuchanan</small></span>
+    </a>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-media" aria-hidden="true">
-      <div class="tile t1"><img src="img/sm/mob2.jpg" srcset="img/sm/mob2.jpg 640w, img/mob2.jpg 1400w" sizes="(min-width: 960px) 40vw, 100vw" alt="" fetchpriority="high" decoding="async"></div>
-      <div class="tile t2"><img src="img/sm/night2.jpg" srcset="img/sm/night2.jpg 640w, img/night2.jpg 1400w" sizes="(min-width: 960px) 30vw, 50vw" alt="" decoding="async"></div>
-      <div class="tile t3"><img src="img/sm/hood4.jpg" srcset="img/sm/hood4.jpg 640w, img/hood4.jpg 1400w" sizes="30vw" alt="" decoding="async"></div>
-      <div class="tile t4"><img src="img/sm/mob1.jpg" srcset="img/sm/mob1.jpg 640w, img/mob1.jpg 1400w" sizes="(min-width: 960px) 30vw, 50vw" alt="" decoding="async"></div>
-      <div class="tile t5"><img src="img/sm/night4.jpg" srcset="img/sm/night4.jpg 640w, img/night4.jpg 1400w" sizes="30vw" alt="" decoding="async"></div>
-    </div>
-    <div class="hero-shade"></div>
-
-    <div class="hero-inner container">
-      <div class="hero-copy">
-        <span class="eyebrow">Cape Town · Street division of BuildsByBuchanan</span>
-        <h1 class="hero-title">We build what<br><em>they can't.</em></h1>
-        <p class="hero-description">
-          Streetwear, engineering courses, training and custom software. We show up on the street, show the work, and leave.
-        </p>
-        <div class="btn-row">
-          <a href="#merch" class="btn btn-primary btn-lg">Shop merch</a>
-          <a href="#access" class="btn btn-ghost btn-lg">Start a project</a>
-        </div>
-      </div>
-
-      <aside class="panel drop-card" aria-labelledby="dropTitle">
-        <div class="panel-header">
-          <div>
-            <h2 class="panel-title" id="dropTitle">Next drop</h2>
-            <p class="panel-desc">Pop-up showcase in Cape Town</p>
-          </div>
-          <span class="status status-ok"><i></i>Confirmed</span>
-        </div>
-        <dl class="kv">
-          <div><dt><svg class="ico"><use href="#i-cal"/></svg>Date</dt><dd id="dropDate">—</dd></div>
-          <div><dt><svg class="ico"><use href="#i-pin"/></svg>Location</dt><dd>Cape Town CBD. Exact spot shared 1 hour before</dd></div>
-          <div><dt><svg class="ico"><use href="#i-clock"/></svg>Starts in</dt><dd class="mono" id="dropIn">—</dd></div>
-        </dl>
-        <a class="btn btn-secondary btn-block" href="https://wa.me/27792686620?text=Notify%20me%20about%20the%20next%20API%20Syndicate%20drop" target="_blank" rel="noopener">
-          <svg class="ico"><use href="#i-wa"/></svg>Get notified on WhatsApp
-        </a>
-      </aside>
-    </div>
-  </section>
-
   <main>
-
-    <!-- THE MOB -->
-    <section class="section" id="mob">
-      <div class="container">
-        <header class="section-header reveal">
-          <div>
-            <span class="eyebrow">01 · The Mob</span>
-            <h2 class="section-title">Show up. Show the work. Leave.</h2>
-          </div>
-          <p class="section-lede">Four to eight of us, one location, ten minutes. Live demos on screens, cards handed out, then we're gone. The footage does the rest.</p>
-        </header>
-
-        <div class="mob-grid" id="mobWall"></div>
-
-        <div class="panel steps-panel reveal">
-          <div class="panel-header">
-            <div>
-              <h3 class="panel-title">How a drop works</h3>
-              <p class="panel-desc">Every drop runs to the same plan.</p>
-            </div>
-          </div>
-          <ol class="steps">
-            <li><span class="step-n">1</span><div><h4>Scout</h4><p>A busy spot where founders and creatives pass: Bree St, Kloof St, the Waterfront.</p></div></li>
-            <li><span class="step-n">2</span><div><h4>Arrive</h4><p>The crew arrives from different directions and sets up screens and lights within a minute.</p></div></li>
-            <li><span class="step-n">3</span><div><h4>Showcase</h4><p>Live websites, 3D web builds and dashboards on screen, with a QR code to the portfolio.</p></div></li>
-            <li><span class="step-n">4</span><div><h4>Hand out</h4><p>Matte black NFC cards go to anyone who stops to watch, film or ask.</p></div></li>
-            <li><span class="step-n">5</span><div><h4>Leave</h4><p>Screens off together, the crew splits up and walks off in different directions.</p></div></li>
-          </ol>
-        </div>
+    <section class="hero">
+      <span class="eyebrow">You found us</span>
+      <h1>We build what<br><em>they can't.</em></h1>
+      <p>The street division of BuildsByBuchanan, Cape Town. Websites, apps and software, built properly.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/27792686620?text=Hi%2C%20I%20found%20API%20Syndicate" target="_blank" rel="noopener">Message us on WhatsApp</a>
+        <a class="btn btn-ghost" href="https://buildsbybuchanan.com" target="_blank" rel="noopener">See our work</a>
       </div>
     </section>
 
-    <!-- Split banner -->
-    <section class="split reveal">
-      <div class="split-media"><img class="bg" src="img/sm/night6.jpg" srcset="img/sm/night6.jpg 640w, img/night6.jpg 1400w" sizes="(min-width: 960px) 55vw, 100vw" alt="" loading="lazy" decoding="async"></div>
-      <div class="split-copy">
-        <span class="eyebrow">Found us on the street?</span>
-        <h2>Every card and every hoodie tag leads here.</h2>
-        <p>Websites, custom software, automation and 3D web, engineered by BuildsByBuchanan.</p>
-        <div class="btn-row">
-          <a href="#access" class="btn btn-primary">Start a project</a>
-          <a href="https://buildsbybuchanan.com" target="_blank" rel="noopener" class="btn btn-ghost">View portfolio <svg class="ico"><use href="#i-ext"/></svg></a>
-        </div>
-      </div>
+    <section class="photos" aria-label="The crew">
+      <img src="img/sm/mob2.jpg" srcset="img/sm/mob2.jpg 640w, img/mob2.jpg 1400w" sizes="(min-width: 720px) 240px, 33vw" alt="Crew member in a black balaclava">
+      <img src="img/sm/night4.jpg" srcset="img/sm/night4.jpg 640w, img/night4.jpg 1400w" sizes="(min-width: 720px) 240px, 33vw" alt="Crew member walking a city street at night">
+      <img src="img/sm/hood5.jpg" srcset="img/sm/hood5.jpg 640w, img/hood5.jpg 1400w" sizes="(min-width: 720px) 240px, 33vw" alt="Crew member in a black hoodie">
     </section>
 
-    <!-- MERCH -->
-    <section class="section" id="merch">
-      <div class="container">
-        <header class="section-header reveal">
-          <div>
-            <span class="eyebrow">02 · Merch</span>
-            <h2 class="section-title">Heavyweight. All black.</h2>
-          </div>
-          <p class="section-lede">Made locally in Cape Town and shipped nationwide. Free Cape Town delivery on orders over R 1,500.</p>
-        </header>
-
-        <div class="segmented" id="merchFilters" role="tablist" aria-label="Filter merch">
-          <button class="seg active" data-filter="all" role="tab" aria-selected="true">All</button>
-          <button class="seg" data-filter="hoodies" role="tab" aria-selected="false">Hoodies</button>
-          <button class="seg" data-filter="tees" role="tab" aria-selected="false">Tees</button>
-          <button class="seg" data-filter="headwear" role="tab" aria-selected="false">Headwear</button>
-          <button class="seg" data-filter="kit" role="tab" aria-selected="false">Kit</button>
-        </div>
-
-        <div class="product-grid rail" id="productGrid"></div>
-        <div class="rail-hint"><span>Swipe for more</span><span class="rail-dots" data-for="productGrid"></span></div>
-      </div>
+    <section class="tiles" aria-label="What we do">
+      <div class="tile"><h2>Merch</h2><p>Heavyweight black hoodies and tees.</p><span class="soon">Coming soon</span></div>
+      <div class="tile"><h2>Courses</h2><p>Learn the stack we build with.</p><span class="soon">Coming soon</span></div>
+      <div class="tile"><h2>Fitness</h2><p>Run club and training in Cape Town.</p><span class="soon">Coming soon</span></div>
+      <div class="tile"><h2>Lifestyle</h2><p>Built between the mountain and the sea.</p><span class="soon">Coming soon</span></div>
     </section>
 
-    <!-- ACADEMY -->
-    <section class="section section-alt" id="academy">
-      <div class="container">
-        <header class="section-header reveal">
-          <div>
-            <span class="eyebrow">03 · Academy</span>
-            <h2 class="section-title">Learn the stack we ship.</h2>
-          </div>
-          <p class="section-lede">The same tools BuildsByBuchanan uses on client work. You build real projects, deploy them, and leave with a portfolio.</p>
-        </header>
-
-        <article class="panel course-feature reveal">
-          <div class="course-feature-media">
-            <img class="bg" src="img/sm/code5.jpg" srcset="img/sm/code5.jpg 640w, img/code5.jpg 1400w" sizes="(min-width: 960px) 45vw, 100vw" alt="" loading="lazy" decoding="async">
-            <span class="badge badge-accent">Flagship</span>
-          </div>
-          <div class="course-feature-body">
-            <h3 class="course-title">Full-Stack Web Architecture &amp; Automation</h3>
-            <p class="course-desc">Everything from frontend to cloud: fast frontends, custom APIs, databases, auth, payments, bots and deployment. You finish with a live product and a portfolio you can show clients.</p>
-            <ul class="check-list">
-              <li>Modern frontend frameworks and 3D WebGL</li>
-              <li>Backend API architecture and databases</li>
-              <li>Automation workflows and cloud deployment</li>
-              <li>Freelance pricing, quoting and finding clients</li>
-              <li>Access to the private South African developer community</li>
-            </ul>
-            <dl class="kv kv-inline">
-              <div><dt>Duration</dt><dd>12 weeks</dd></div>
-              <div><dt>Format</dt><dd>Live + on-demand</dd></div>
-              <div><dt>Outcome</dt><dd>Certificate</dd></div>
-            </dl>
-            <div class="card-footer">
-              <span class="price">R 5,499.00</span>
-              <button class="btn btn-primary add-btn" data-id="course-fullstack">Enrol now</button>
-            </div>
-          </div>
-        </article>
-
-        <div class="course-grid rail" id="courseGrid"></div>
-        <div class="rail-hint"><span>Swipe for more</span><span class="rail-dots" data-for="courseGrid"></span></div>
+    <section class="contact">
+      <h2>Want in, or need something built?</h2>
+      <div class="actions">
+        <a class="btn btn-primary" href="https://wa.me/27792686620" target="_blank" rel="noopener">WhatsApp +27 79 268 6620</a>
+        <a class="btn btn-ghost" href="mailto:info@buildsbybuchanan.com">info@buildsbybuchanan.com</a>
       </div>
     </section>
-
-    <!-- FITNESS -->
-    <section class="section" id="fitness">
-      <div class="fitness-banner reveal">
-        <img class="bg" src="img/sm/gym12.jpg" srcset="img/sm/gym12.jpg 640w, img/gym12.jpg 1400w" sizes="100vw" alt="" loading="lazy" decoding="async">
-        <div class="container">
-          <span class="eyebrow">04 · Fitness</span>
-          <h2 class="section-title">Sharp mind. <em>Strong body.</em></h2>
-          <p class="section-lede">Long days at a screen take a toll. We train the way we work: consistently, with a plan, and together.</p>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="program-grid rail" id="programGrid"></div>
-        <div class="rail-hint"><span>Swipe for more</span><span class="rail-dots" data-for="programGrid"></span></div>
-
-        <div class="panel table-panel reveal">
-          <div class="panel-header">
-            <div>
-              <h3 class="panel-title">Weekly schedule</h3>
-              <p class="panel-desc">All sessions in Cape Town, times in SAST.</p>
-            </div>
-          </div>
-          <div class="table-wrap">
-            <table class="table">
-              <thead><tr><th>Day</th><th>Session</th><th>Time</th><th>Location</th></tr></thead>
-              <tbody>
-                <tr><td>Mon</td><td>Iron Protocol: push</td><td class="mono">05:30</td><td>CBD</td></tr>
-                <tr><td>Tue</td><td>Strike: bag work</td><td class="mono">18:30</td><td>Woodstock</td></tr>
-                <tr><td>Wed</td><td>Iron Protocol: pull</td><td class="mono">05:30</td><td>CBD</td></tr>
-                <tr class="row-hl"><td>Thu</td><td>Night Run Club, 5K / 10K <span class="badge badge-accent">Free</span></td><td class="mono">19:00</td><td>Sea Point Promenade</td></tr>
-                <tr><td>Sat</td><td>Lion's Head sunrise hike</td><td class="mono">05:00</td><td>Signal Hill Rd</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- LIFESTYLE -->
-    <section class="section section-alt" id="lifestyle">
-      <div class="container">
-        <header class="section-header reveal">
-          <div>
-            <span class="eyebrow">05 · Lifestyle</span>
-            <h2 class="section-title">Between the mountain and the sea.</h2>
-          </div>
-          <p class="section-lede">Sunrise hikes, late-night builds, and the Cape Town city lights in between.</p>
-        </header>
-
-        <div class="journal">
-          <article class="j-card j-big reveal">
-            <img class="bg" src="img/sm/cpt3.jpg" srcset="img/sm/cpt3.jpg 640w, img/cpt3.jpg 1800w" sizes="(min-width: 960px) 50vw, 100vw" alt="Cape Town city lights at night" loading="lazy" decoding="async">
-            <div class="j-cap"><span>Journal 01</span><h3>The city after midnight</h3><p>Why our best work in Cape Town happens once the city goes quiet.</p></div>
-          </article>
-          <article class="j-card reveal">
-            <img class="bg" src="img/sm/cpt5.jpg" srcset="img/sm/cpt5.jpg 640w, img/cpt5.jpg 1800w" sizes="(min-width: 960px) 25vw, 50vw" alt="Lion's Head at sunrise" loading="lazy" decoding="async">
-            <div class="j-cap"><span>Journal 02</span><h3>Lion's Head, 05:00</h3></div>
-          </article>
-          <article class="j-card reveal">
-            <img class="bg" src="img/sm/code6.jpg" srcset="img/sm/code6.jpg 640w, img/code6.jpg 1400w" sizes="(min-width: 960px) 25vw, 50vw" alt="Laptop with code at night" loading="lazy" decoding="async">
-            <div class="j-cap"><span>Journal 03</span><h3>The night-shift desk</h3></div>
-          </article>
-          <article class="j-card reveal">
-            <img class="bg" src="img/sm/night1.jpg" srcset="img/sm/night1.jpg 640w, img/night1.jpg 1400w" sizes="(min-width: 960px) 25vw, 50vw" alt="Person in a black jacket in the city" loading="lazy" decoding="async">
-            <div class="j-cap"><span>Journal 04</span><h3>Why we wear black</h3></div>
-          </article>
-          <article class="j-card reveal">
-            <img class="bg" src="img/sm/cpt1.jpg" srcset="img/sm/cpt1.jpg 640w, img/cpt1.jpg 1800w" sizes="(min-width: 960px) 25vw, 50vw" alt="Table Mountain above Cape Town" loading="lazy" decoding="async">
-            <div class="j-cap"><span>Journal 05</span><h3>Built in 021</h3></div>
-          </article>
-        </div>
-
-        <div class="panel code-panel reveal">
-          <div class="panel-header">
-            <div>
-              <h3 class="panel-title">The Code</h3>
-              <p class="panel-desc">Six rules every member lives by.</p>
-            </div>
-          </div>
-          <ol class="rules">
-            <li><b>01</b>Ship before you talk about it.</li>
-            <li><b>02</b>Train your body. Your code gets better too.</li>
-            <li><b>03</b>No loud logos. Let the work speak.</li>
-            <li><b>04</b>Show up together. Leave separately.</li>
-            <li><b>05</b>Build for Cape Town first, then the world.</li>
-            <li><b>06</b>Leave every client better off than you found them.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Join -->
-    <section class="join reveal">
-      <div class="join-media" aria-hidden="true">
-        <img src="img/sm/crew4.jpg" srcset="img/sm/crew4.jpg 640w, img/crew4.jpg 1200w" sizes="(min-width: 640px) 30vw, 100vw" alt="" loading="lazy" decoding="async">
-        <img src="img/sm/crew3.jpg" srcset="img/sm/crew3.jpg 640w, img/crew3.jpg 1200w" sizes="(min-width: 640px) 20vw, 50vw" alt="" loading="lazy" decoding="async">
-        <img src="img/sm/crew1.jpg" srcset="img/sm/crew1.jpg 640w, img/crew1.jpg 1200w" sizes="(min-width: 640px) 20vw, 50vw" alt="" loading="lazy" decoding="async">
-      </div>
-      <div class="join-copy">
-        <span class="eyebrow">Now recruiting</span>
-        <h2>Join the Syndicate.</h2>
-        <p>Developers, designers, videographers, runners and fighters: if you build things, you belong here. Members get first access to every drop, private developer channels and paid client work.</p>
-        <a href="#access" class="btn btn-primary" data-intent="Join the Syndicate">Apply to join</a>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="access">
-      <div class="container contact">
-        <div class="contact-copy reveal">
-          <span class="eyebrow">06 · Contact</span>
-          <h2 class="section-title">Start a project.</h2>
-          <p class="section-lede">A website, custom software, an app, automation, bulk merch for your team, or a spot on a course. Send us the details and we'll reply within 24 hours.</p>
-
-          <dl class="kv contact-kv">
-            <div><dt><svg class="ico"><use href="#i-mail"/></svg>Email</dt><dd><a href="mailto:info@buildsbybuchanan.com">info@buildsbybuchanan.com</a></dd></div>
-            <div><dt><svg class="ico"><use href="#i-wa"/></svg>WhatsApp</dt><dd><a href="https://wa.me/27792686620" target="_blank" rel="noopener">+27 79 268 6620</a></dd></div>
-            <div><dt><svg class="ico"><use href="#i-ext"/></svg>Website</dt><dd><a href="https://buildsbybuchanan.com" target="_blank" rel="noopener">buildsbybuchanan.com</a></dd></div>
-          </dl>
-        </div>
-
-        <form class="panel form reveal" id="accessForm" novalidate>
-          <div class="panel-header">
-            <div>
-              <h3 class="panel-title">Project details</h3>
-              <p class="panel-desc">Fields marked * are required.</p>
-            </div>
-          </div>
-          <div class="form-body">
-            <div class="field">
-              <label for="fName">Name *</label>
-              <input id="fName" name="name" required autocomplete="name" enterkeyhint="next">
-              <span class="field-error">Enter your name.</span>
-            </div>
-            <div class="field">
-              <label for="fBiz">Business or brand <span class="optional">(optional)</span></label>
-              <input id="fBiz" name="business" autocomplete="organization" enterkeyhint="next">
-            </div>
-            <div class="field">
-              <label for="missionType">What do you need?</label>
-              <select id="missionType" name="type">
-                <option>Website or landing page</option>
-                <option>Custom software or web app</option>
-                <option>Mobile app</option>
-                <option>Automation, bots or APIs</option>
-                <option>Bulk or custom merch</option>
-                <option>Academy course</option>
-                <option>Fitness program</option>
-                <option>Join the Syndicate</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="fBudget">Budget</label>
-              <select id="fBudget" name="budget">
-                <option>Under R 5,000</option>
-                <option>R 5,000 – R 15,000</option>
-                <option>R 15,000 – R 50,000</option>
-                <option>R 50,000+</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-            <div class="field full">
-              <label for="fBrief">Project description *</label>
-              <span class="field-desc">What are you building, and by when?</span>
-              <textarea id="fBrief" name="brief" rows="4" required></textarea>
-              <span class="field-error">Add a short description.</span>
-            </div>
-          </div>
-          <div class="form-footer">
-            <p class="form-note" id="formNote" role="status"></p>
-            <div class="btn-row">
-              <button type="submit" class="btn btn-ghost" data-via="email"><svg class="ico"><use href="#i-mail"/></svg>Send via email</button>
-              <button type="submit" class="btn btn-primary" data-via="whatsapp"><svg class="ico"><use href="#i-wa"/></svg>Send via WhatsApp</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="#top" class="brand">
-          <img src="assets/bbb-mark.png" alt="" width="30" height="30" class="brand-mark">
-          <span class="brand-text"><span class="brand-name">API <em>Syndicate</em></span><span class="brand-sub">by BuildsByBuchanan</span></span>
-        </a>
-        <p>The street division of <a href="https://buildsbybuchanan.com" target="_blank" rel="noopener">BuildsByBuchanan</a>, Cape Town, South Africa.</p>
-      </div>
-      <nav class="footer-links" aria-label="Footer">
-        <a href="#mob">The Mob</a><a href="#merch">Merch</a><a href="#academy">Academy</a>
-        <a href="#fitness">Fitness</a><a href="#lifestyle">Lifestyle</a><a href="#access">Contact</a>
-      </nav>
-      <p class="footer-legal">© <span id="year"></span> API Syndicate · BuildsByBuchanan. Photography via <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.</p>
-    </div>
+  <footer>
+    © <span id="y">2026</span> API Syndicate · <a href="https://buildsbybuchanan.com" target="_blank" rel="noopener">BuildsByBuchanan</a>
   </footer>
 
-  <!-- Mobile tab bar -->
-  <nav class="tabbar" id="tabbar" aria-label="Sections">
-    <a href="#mob"><svg class="ico"><use href="#i-users"/></svg>Mob</a>
-    <a href="#merch"><svg class="ico"><use href="#i-shirt"/></svg>Merch</a>
-    <a href="#academy"><svg class="ico"><use href="#i-code"/></svg>Learn</a>
-    <a href="#fitness"><svg class="ico"><use href="#i-pulse"/></svg>Fitness</a>
-    <a href="#lifestyle"><svg class="ico"><use href="#i-moon"/></svg>Life</a>
-    <a href="#access"><svg class="ico"><use href="#i-send"/></svg>Contact</a>
-  </nav>
-
-  <!-- Cart -->
-  <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">
-    <div class="cart-header">
-      <h3 class="panel-title">Your cart</h3>
-      <button class="icon-btn" id="closeCart" aria-label="Close cart"><svg class="ico"><use href="#i-close"/></svg></button>
-    </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total-row"><span>Total</span><span id="cartTotal" class="mono">R 0.00</span></div>
-      <p class="cart-note">Free Cape Town delivery on orders over R 1,500. Nationwide courier R 120.</p>
-      <button class="btn btn-primary btn-block btn-lg" id="checkoutWa"><svg class="ico"><use href="#i-wa"/></svg>Check out via WhatsApp</button>
-      <button class="btn btn-ghost btn-block" id="checkoutMail"><svg class="ico"><use href="#i-mail"/></svg>Check out via email</button>
-    </div>
-  </aside>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="icon-btn lb-close" id="lbClose" aria-label="Close"><svg class="ico"><use href="#i-close"/></svg></button>
-    <button class="lb-nav prev" id="lbPrev" aria-label="Previous photo">‹</button>
-    <figure>
-      <img id="lbImg" alt="">
-      <figcaption id="lbCap"></figcaption>
-    </figure>
-    <button class="lb-nav next" id="lbNext" aria-label="Next photo">›</button>
-  </div>
-
-  <div class="toast" id="toast" role="status"></div>
-
-  <script src="app.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
