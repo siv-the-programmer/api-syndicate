@@ -59,9 +59,47 @@ h1, h2 { color: var(--text-strong); letter-spacing: -.03em; line-height: 1.1; }
 footer { border-top: 1px solid var(--border); padding: 20px 0 28px; font-size: 13px; color: var(--text-muted); }
 footer a { color: var(--text); }
 
+.tile-link { border-color: rgba(138,191,60,.35); transition: border-color .15s, background .15s; }
+.tile-link:hover { border-color: var(--accent); background: #151a14; }
+.go { margin-top: 8px; font-size: 13.5px; font-weight: 700; color: var(--accent); }
+
+/* ---------- Courses page ---------- */
+.top-row { display: flex; align-items: center; justify-content: space-between; }
+.back { font-size: 14px; color: var(--text-muted); padding: 10px 0 10px 12px; }
+.back:hover { color: var(--text-strong); }
+.page-intro { padding: 28px 0 28px; }
+.page-intro h1 { font-size: clamp(2.2rem, 10vw, 3.4rem); margin-bottom: 12px; }
+.page-intro p { max-width: 520px; }
+.courses { display: grid; gap: 14px; margin-bottom: 36px; }
+.course { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 20px 18px; display: grid; gap: 16px; }
+.level { display: inline-block; font-family: "DM Mono", monospace; font-size: 12px; color: var(--accent); margin-bottom: 6px; }
+.course h2 { font-size: 22px; margin-bottom: 6px; }
+.course-head p { font-size: 15px; }
+.facts { display: grid; border: 1px solid var(--border); border-radius: var(--radius-md); }
+.facts > div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.facts > div:last-child { border-bottom: 0; }
+.facts dt { color: var(--text-muted); }
+.facts dd { color: var(--text-strong); }
+details { border-top: 1px solid var(--border); padding-top: 12px; }
+summary { cursor: pointer; font-weight: 700; color: var(--text-strong); font-size: 15px; list-style: none; display: flex; align-items: center; justify-content: space-between; min-height: 36px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: "DM Mono", monospace; font-size: 18px; color: var(--accent); }
+details[open] summary::after { content: "−"; }
+.outline { list-style: none; margin-top: 8px; display: grid; }
+.outline li { display: grid; grid-template-columns: 70px 1fr; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 14.5px; }
+.outline li:last-child { border-bottom: 0; }
+.outline b { font-family: "DM Mono", monospace; font-weight: 400; font-size: 12.5px; color: var(--text-muted); padding-top: 2px; }
+.course .btn { width: 100%; }
+.note { border-top: 1px solid var(--border); padding: 28px 0 36px; }
+.note h2 { font-size: 20px; margin-bottom: 8px; }
+.note p { margin-bottom: 16px; max-width: 520px; }
+
 @media (min-width: 720px) {
   .hero { padding: 64px 0 48px; }
   .actions { display: flex; flex-wrap: wrap; }
   .photos { margin: 0 0 40px; border-radius: var(--radius-md); overflow: hidden; }
   .tiles { grid-template-columns: repeat(4, 1fr); }
+  .courses { grid-template-columns: 1fr 1fr; }
+  .course .btn, .note .btn { width: auto; justify-self: start; }
+  .note .btn { display: inline-flex; }
 }
