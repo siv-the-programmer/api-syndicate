@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API SYNDICATE | Cape Town | BuildsByBuchanan</title>
+  <meta name="description" content="API Syndicate — the street division of BuildsByBuchanan. Software, streetwear, engineering courses, conditioning and lifestyle out of Cape Town.">
+  <meta name="theme-color" content="#050507">
+  <meta property="og:title" content="API SYNDICATE // WE BUILD WHAT THEY CAN'T">
+  <meta property="og:description" content="Street division of BuildsByBuchanan. Merch, courses, fitness, lifestyle. Cape Town.">
+  <meta property="og:image" content="img/mob2.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' fill='%23000'/%3E%3Cpath d='M12 3L3 7.5l9 4.5 9-4.5L12 3zM3 16.5l9 4.5 9-4.5M3 12l9 4.5 9-4.5' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Boot sequence -->
+  <div class="boot" id="boot" aria-hidden="true">
+    <pre id="bootLog"></pre>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="overlay-backdrop" id="backdrop"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="nav-container">
+      <a href="#top" class="brand-logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">API SYNDICATE</span>
+          <span class="logo-subtitle">CAPE TOWN // BUILDSBYBUCHANAN</span>
+        </div>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#mob">THE MOB</a>
+        <a href="#merch">MERCH</a>
+        <a href="#academy">ACADEMY</a>
+        <a href="#fitness">FITNESS</a>
+        <a href="#lifestyle">LIFESTYLE</a>
+        <a href="#access" class="nav-access">GET ACCESS</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          CART <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-mosaic" aria-hidden="true">
+      <div class="tile t1" style="background-image:url(img/mob2.jpg)"></div>
+      <div class="tile t2" style="background-image:url(img/night2.jpg)"></div>
+      <div class="tile t3" style="background-image:url(img/hood4.jpg)"></div>
+      <div class="tile t4" style="background-image:url(img/mob1.jpg)"></div>
+      <div class="tile t5" style="background-image:url(img/night4.jpg)"></div>
+    </div>
+    <div class="hero-shade"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-status mono">
+        <span class="live-dot"></span> SIGNAL ACTIVE // 33.9249° S, 18.4241° E // <span id="clock">--:--:--</span> SAST
+      </div>
+      <h1 class="hero-title">
+        <span class="glitch" data-text="WE BUILD">WE BUILD</span>
+        <span class="glitch outline" data-text="WHAT THEY">WHAT THEY</span>
+        <span class="glitch red" data-text="CAN'T.">CAN'T.</span>
+      </h1>
+      <p class="hero-description">
+        Software, streetwear, conditioning and code — out of Cape Town. API Syndicate is the street division of
+        <a href="https://buildsbybuchanan.com" target="_blank" rel="noopener">BuildsByBuchanan</a>. We show up unannounced,
+        drop the work, and disappear.
+      </p>
+      <div class="terminal mono" aria-label="Terminal">
+        <span class="prompt">syndicate@ct:~$</span> <span id="typed"></span><span class="caret">█</span>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#merch" class="btn-primary">SHOP THE DROP</a>
+        <a href="#access" class="btn-secondary">REQUEST ACCESS KEY →</a>
+      </div>
+    </div>
+
+    <div class="hero-countdown mono">
+      <div class="cd-label">NEXT CODE DROP // <span id="dropName">DROP 007</span></div>
+      <div class="cd-grid" id="countdown">
+        <div><b id="cdD">00</b><span>DAYS</span></div>
+        <div><b id="cdH">00</b><span>HRS</span></div>
+        <div><b id="cdM">00</b><span>MIN</span></div>
+        <div><b id="cdS">00</b><span>SEC</span></div>
+      </div>
+      <div class="cd-loc">LOCATION: <span class="redact">CLASSIFIED</span> — REVEALED T-60 MIN</div>
+    </div>
+  </section>
+
+  <!-- Ticker -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>SYSTEM DETECTED</span><span>✦</span><span>CLAIM YOUR UPGRADE</span><span>✦</span><span>WE BUILD WHAT THEY CAN'T</span><span>✦</span><span>CAPE TOWN 021</span><span>✦</span><span>480 GSM HEAVYWEIGHT</span><span>✦</span><span>NIGHT RUN CLUB — THURSDAYS</span><span>✦</span><span>SHIP IT. DISAPPEAR.</span><span>✦</span>
+      <span>SYSTEM DETECTED</span><span>✦</span><span>CLAIM YOUR UPGRADE</span><span>✦</span><span>WE BUILD WHAT THEY CAN'T</span><span>✦</span><span>CAPE TOWN 021</span><span>✦</span><span>480 GSM HEAVYWEIGHT</span><span>✦</span><span>NIGHT RUN CLUB — THURSDAYS</span><span>✦</span><span>SHIP IT. DISAPPEAR.</span><span>✦</span>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- THE MOB / FIELD FOOTAGE -->
+    <section class="section" id="mob">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="kicker mono">[01] FIELD FOOTAGE</span>
+            <h2 class="section-title">THE MOB</h2>
+          </div>
+          <p class="section-lede">4–8 operators. Different directions. One signal. Ten minutes on the street, then gone. This is what a Code Drop looks like.</p>
+        </div>
+
+        <div class="mob-wall" id="mobWall">
+          <!-- filled by app.js -->
+        </div>
+
+        <!-- Operation sequence -->
+        <div class="ops reveal">
+          <div class="ops-head">
+            <span class="kicker mono">[01.1] THE OPERATION</span>
+            <h3 class="sub-title">ANATOMY OF A CODE DROP</h3>
+          </div>
+          <ol class="ops-steps">
+            <li>
+              <span class="ops-t mono">T-24H</span>
+              <h4>SCOUT</h4>
+              <p>High-foot-traffic corridor. Founders, creatives, decision-makers. Bree St. Kloof St. The Waterfront edge.</p>
+            </li>
+            <li>
+              <span class="ops-t mono">T-0</span>
+              <h4>CONVERGE</h4>
+              <p>Operators arrive from separate directions on signal. Formation. Rim-lights on. Displays up.</p>
+            </li>
+            <li>
+              <span class="ops-t mono">T+2</span>
+              <h4>SHOWCASE</h4>
+              <p>Projected dark-mode UI, live 3D web builds, scrolling terminals that resolve into one massive QR code.</p>
+            </li>
+            <li>
+              <span class="ops-t mono">T+5</span>
+              <h4>DISTRIBUTE</h4>
+              <p>Silent hand-off. Matte black access cards and NFC code keys to whoever stops to film or ask.</p>
+            </li>
+            <li>
+              <span class="ops-t mono">T+8</span>
+              <h4>EXTRACT</h4>
+              <p>Screens go dark in unison. Split up. Walk into the crowd. The footage does the rest.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Split banner -->
+    <section class="split-banner reveal">
+      <div class="split-img" style="background-image:url(img/night6.jpg)"></div>
+      <div class="split-copy">
+        <span class="kicker mono">SCAN RECEIVED</span>
+        <h2>YOU FOUND US.<br>NOW BUILD SOMETHING.</h2>
+        <p>Every card, every hoodie tag, every projection routes here. Websites, custom software, automation, 3D web — engineered by BuildsByBuchanan, delivered by the Syndicate.</p>
+        <a href="#access" class="btn-primary">CLAIM YOUR UPGRADE</a>
+      </div>
+    </section>
+
+    <!-- MERCH -->
+    <section class="section" id="merch">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="kicker mono">[02] ARMORY</span>
+            <h2 class="section-title">MERCH</h2>
+          </div>
+          <p class="section-lede">Heavyweight. Blacked out. Built for the drop. Local Cape Town production, shipped nationwide.</p>
+        </div>
+
+        <div class="filters mono" id="merchFilters" role="tablist">
+          <button class="filter active" data-filter="all">ALL</button>
+          <button class="filter" data-filter="hoodies">HOODIES</button>
+          <button class="filter" data-filter="tees">TEES</button>
+          <button class="filter" data-filter="headwear">HEADWEAR</button>
+          <button class="filter" data-filter="kit">KIT</button>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <!-- filled by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMY -->
+    <section class="section section-alt" id="academy">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="kicker mono">[03] ENGINEERING ACADEMY</span>
+            <h2 class="section-title">COURSES</h2>
+          </div>
+          <p class="section-lede">The exact stack BuildsByBuchanan ships to clients. No fluff, no theory lectures — you build real things, deploy them, and get paid.</p>
+        </div>
+
+        <article class="course-feature reveal">
+          <div class="course-feature-img" style="background-image:url(img/code5.jpg)">
+            <span class="tag mono">FLAGSHIP // FULL ENROLLMENT</span>
+          </div>
+          <div class="course-feature-body">
+            <h3 class="course-title">FULL-STACK WEB ARCHITECTURE &amp; AUTOMATION</h3>
+            <p class="course-desc">Master the stack end to end: high-speed frontends, custom APIs, databases, auth, payments, bots and cloud deployment. Finish with a live product and a client-ready portfolio.</p>
+            <ul class="feature-list mono">
+              <li>Modern frontend frameworks &amp; 3D WebGL interactions</li>
+              <li>Backend API architecture &amp; databases</li>
+              <li>Automated bot workflows &amp; cloud deployment</li>
+              <li>Freelance pricing, quoting &amp; client acquisition</li>
+              <li>Private South African developer syndicate access</li>
+            </ul>
+            <div class="course-meta mono">
+              <span>12 WEEKS</span><span>LIVE + ON-DEMAND</span><span>CERTIFICATE</span>
+            </div>
+            <div class="course-footer">
+              <span class="price mono">R 5,499.00</span>
+              <button class="btn-primary add-btn" data-id="course-fullstack">ENROLL NOW</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="course-grid" id="courseGrid">
+          <!-- filled by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- FITNESS -->
+    <section class="section" id="fitness">
+      <div class="fitness-hero reveal" style="background-image:url(img/gym12.jpg)">
+        <div class="container">
+          <span class="kicker mono">[04] SYNDICATE CONDITIONING</span>
+          <h2 class="section-title xl">SHARP MIND.<br><span class="outline-text">HARD BODY.</span></h2>
+          <p class="section-lede">Twelve hours at a screen will break you if you let it. The Syndicate trains like it ships — consistent, measured, no excuses.</p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="program-grid" id="programGrid">
+          <!-- filled by app.js -->
+        </div>
+
+        <div class="schedule reveal">
+          <div class="schedule-head">
+            <h3 class="sub-title">WEEKLY OPS SCHEDULE</h3>
+            <span class="mono muted">CAPE TOWN // ALL SESSIONS SAST</span>
+          </div>
+          <div class="schedule-table mono">
+            <div class="row head"><span>DAY</span><span>SESSION</span><span>TIME</span><span>LOCATION</span></div>
+            <div class="row"><span>MON</span><span>IRON PROTOCOL — PUSH</span><span>05:30</span><span>CBD</span></div>
+            <div class="row"><span>TUE</span><span>STRIKE — BAG WORK</span><span>18:30</span><span>WOODSTOCK</span></div>
+            <div class="row"><span>WED</span><span>IRON PROTOCOL — PULL</span><span>05:30</span><span>CBD</span></div>
+            <div class="row hot"><span>THU</span><span>NIGHT RUN CLUB — 5K / 10K</span><span>19:00</span><span>SEA POINT PROMENADE</span></div>
+            <div class="row"><span>SAT</span><span>SUMMIT — LION'S HEAD SUNRISE</span><span>05:00</span><span>SIGNAL HILL RD</span></div>
+          </div>
+        </div>
+
+        <div class="gym-strip reveal" aria-hidden="true">
+          <img src="img/gym4.jpg" alt="" loading="lazy">
+          <img src="img/gym10.jpg" alt="" loading="lazy">
+          <img src="img/gym8.jpg" alt="" loading="lazy">
+          <img src="img/run2.jpg" alt="" loading="lazy">
+          <img src="img/gym5.jpg" alt="" loading="lazy">
+          <img src="img/gym14.jpg" alt="" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- LIFESTYLE -->
+    <section class="section section-alt" id="lifestyle">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="kicker mono">[05] AFTER HOURS</span>
+            <h2 class="section-title">LIFESTYLE</h2>
+          </div>
+          <p class="section-lede">Built between Table Mountain and the Atlantic. Sunrise summits, midnight deploys, and the city lights in between.</p>
+        </div>
+
+        <div class="lifestyle-grid">
+          <div class="ls-big reveal" style="background-image:url(img/cpt3.jpg)">
+            <div class="ls-cap">
+              <span class="mono">JOURNAL // 001</span>
+              <h3>THE CITY AFTER MIDNIGHT</h3>
+              <p>Why the best work in Cape Town happens when the city goes quiet.</p>
+            </div>
+          </div>
+          <div class="ls-small reveal" style="background-image:url(img/cpt5.jpg)">
+            <div class="ls-cap">
+              <span class="mono">JOURNAL // 002</span>
+              <h3>LION'S HEAD, 05:00</h3>
+            </div>
+          </div>
+          <div class="ls-small reveal" style="background-image:url(img/code6.jpg)">
+            <div class="ls-cap">
+              <span class="mono">JOURNAL // 003</span>
+              <h3>NIGHT SHIFT SETUP</h3>
+            </div>
+          </div>
+          <div class="ls-small reveal" style="background-image:url(img/night1.jpg)">
+            <div class="ls-cap">
+              <span class="mono">JOURNAL // 004</span>
+              <h3>WHY WE WEAR BLACK</h3>
+            </div>
+          </div>
+          <div class="ls-small reveal" style="background-image:url(img/cpt1.jpg)">
+            <div class="ls-cap">
+              <span class="mono">JOURNAL // 005</span>
+              <h3>021 IS THE BLUEPRINT</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-rules reveal">
+          <h3 class="sub-title">THE CODE</h3>
+          <ol class="rules">
+            <li><b>01</b><span>Ship before you speak.</span></li>
+            <li><b>02</b><span>Train the body. The code follows.</span></li>
+            <li><b>03</b><span>No loud logos. The work is the logo.</span></li>
+            <li><b>04</b><span>Show up together. Leave separately.</span></li>
+            <li><b>05</b><span>Build for 021 first. Then the world.</span></li>
+            <li><b>06</b><span>Leave every client better than you found them.</span></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crew banner -->
+    <section class="crew-banner reveal">
+      <div class="crew-imgs" aria-hidden="true">
+        <img src="img/crew4.jpg" alt="" loading="lazy">
+        <img src="img/crew3.jpg" alt="" loading="lazy">
+        <img src="img/crew1.jpg" alt="" loading="lazy">
+      </div>
+      <div class="crew-copy">
+        <span class="kicker mono">RECRUITMENT // OPEN</span>
+        <h2>JOIN THE SYNDICATE</h2>
+        <p>Developers, designers, videographers, runners, fighters. If you build, you belong. Operators get first access to every drop, private dev channels, and paid client work.</p>
+        <a href="#access" class="btn-primary" data-intent="Join the Syndicate">APPLY AS OPERATOR</a>
+      </div>
+    </section>
+
+    <!-- ACCESS / CONTACT -->
+    <section class="section" id="access">
+      <div class="container access-wrap">
+        <div class="access-copy reveal">
+          <span class="kicker mono">[06] SECURE CHANNEL</span>
+          <h2 class="section-title">REQUEST AN<br>ACCESS KEY</h2>
+          <p class="section-lede">Need a website, custom software, an app, automation, bulk merch for your team — or want in on a course? Transmit your brief. We respond within 24 hours.</p>
+          <div class="channels mono">
+            <a href="mailto:info@buildsbybuchanan.com">✉ INFO@BUILDSBYBUCHANAN.COM</a>
+            <a href="https://wa.me/27792686620" target="_blank" rel="noopener">◉ WHATSAPP +27 79 268 6620</a>
+            <a href="https://buildsbybuchanan.com" target="_blank" rel="noopener">↗ BUILDSBYBUCHANAN.COM</a>
+          </div>
+        </div>
+
+        <form class="access-form reveal" id="accessForm" novalidate>
+          <div class="form-head mono"><span class="live-dot"></span> ENCRYPTED CHANNEL // SESSION <span id="sessionId">----</span></div>
+          <label>CALLSIGN / NAME<input name="name" required autocomplete="name" placeholder="Your name"></label>
+          <label>BUSINESS / BRAND<input name="business" autocomplete="organization" placeholder="Optional"></label>
+          <label>MISSION TYPE
+            <select name="type" id="missionType">
+              <option>Website / Landing page</option>
+              <option>Custom software / Web app</option>
+              <option>Mobile app</option>
+              <option>Automation / Bots / APIs</option>
+              <option>Bulk / custom merch</option>
+              <option>Academy course</option>
+              <option>Fitness program</option>
+              <option>Join the Syndicate</option>
+            </select>
+          </label>
+          <label>BUDGET
+            <select name="budget">
+              <option>Under R 5,000</option>
+              <option>R 5,000 – R 15,000</option>
+              <option>R 15,000 – R 50,000</option>
+              <option>R 50,000+</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+          <label class="full">BRIEF<textarea name="brief" rows="4" required placeholder="What are we building?"></textarea></label>
+          <div class="form-actions full">
+            <button type="submit" class="btn-primary" data-via="whatsapp">TRANSMIT VIA WHATSAPP</button>
+            <button type="submit" class="btn-secondary" data-via="email">TRANSMIT VIA EMAIL</button>
+          </div>
+          <p class="form-note mono full" id="formNote"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-big" aria-hidden="true">API SYNDICATE</div>
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand">API SYNDICATE // CAPE TOWN</div>
+        <p class="mono muted">The street division of <a href="https://buildsbybuchanan.com" target="_blank" rel="noopener">BUILDSBYBUCHANAN.COM</a></p>
+      </div>
+      <div class="footer-links mono">
+        <a href="#mob">THE MOB</a><a href="#merch">MERCH</a><a href="#academy">ACADEMY</a>
+        <a href="#fitness">FITNESS</a><a href="#lifestyle">LIFESTYLE</a><a href="#access">ACCESS</a>
+      </div>
+      <div class="mono muted small">
+        © <span id="year"></span> API SYNDICATE SOUTH AFRICA. ALL RIGHTS RESERVED.<br>
+        Photography via <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">
+    <div class="cart-header">
+      <h3 class="cart-title">YOUR LOADOUT</h3>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row"><span>TOTAL</span><span id="cartTotal">R 0.00</span></div>
+      <p class="mono muted small">Free Cape Town delivery on orders over R 1,500. Nationwide courier R 120.</p>
+      <button class="checkout-btn" id="checkoutWa">CHECKOUT VIA WHATSAPP</button>
+      <button class="checkout-btn ghost" id="checkoutMail">CHECKOUT VIA EMAIL</button>
+    </div>
+  </aside>
+
+  <!-- Product modal / Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close-btn lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+    <figure>
+      <img id="lbImg" alt="">
+      <figcaption class="mono" id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-nav next" id="lbNext" aria-label="Next">›</button>
+  </div>
+
+  <div class="toast mono" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
