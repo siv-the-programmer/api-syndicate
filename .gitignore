@@ -1,2 +1,5 @@
 .vercel
 _preview.html
+
+.vercel
+.env*
