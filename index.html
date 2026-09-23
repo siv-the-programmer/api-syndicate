@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>API SYNDICATE | Cape Town | BuildsByBuchanan</title>
   <meta name="description" content="API Syndicate — the street division of BuildsByBuchanan. Software, streetwear, engineering courses, conditioning and lifestyle out of Cape Town.">
   <meta name="theme-color" content="#050507">
@@ -51,7 +51,6 @@
         <button class="cart-btn" id="cartBtn" aria-label="Open cart">
           CART <span class="cart-count" id="cartCount">0</span>
         </button>
-        <button class="menu-btn" id="menuBtn" aria-label="Menu"><span></span><span></span></button>
       </div>
     </div>
   </header>
@@ -59,18 +58,18 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-mosaic" aria-hidden="true">
-      <div class="tile t1" style="background-image:url(img/mob2.jpg)"></div>
-      <div class="tile t2" style="background-image:url(img/night2.jpg)"></div>
-      <div class="tile t3" style="background-image:url(img/hood4.jpg)"></div>
-      <div class="tile t4" style="background-image:url(img/mob1.jpg)"></div>
-      <div class="tile t5" style="background-image:url(img/night4.jpg)"></div>
+      <div class="tile t1"><img class="bg" src="img/sm/mob2.jpg" srcset="img/sm/mob2.jpg 640w, img/mob2.jpg 1400w" sizes="(min-width: 960px) 50vw, 100vw" alt="" fetchpriority="high" decoding="async"></div>
+      <div class="tile t2"><img class="bg" src="img/sm/night2.jpg" srcset="img/sm/night2.jpg 640w, img/night2.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt=""  decoding="async"></div>
+      <div class="tile t3"><img class="bg" src="img/sm/hood4.jpg" srcset="img/sm/hood4.jpg 640w, img/hood4.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt=""  decoding="async"></div>
+      <div class="tile t4"><img class="bg" src="img/sm/mob1.jpg" srcset="img/sm/mob1.jpg 640w, img/mob1.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt=""  decoding="async"></div>
+      <div class="tile t5"><img class="bg" src="img/sm/night4.jpg" srcset="img/sm/night4.jpg 640w, img/night4.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt=""  decoding="async"></div>
     </div>
     <div class="hero-shade"></div>
     <div class="scanlines" aria-hidden="true"></div>
 
     <div class="hero-inner">
       <div class="hero-status mono">
-        <span class="live-dot"></span> SIGNAL ACTIVE // 33.9249° S, 18.4241° E // <span id="clock">--:--:--</span> SAST
+        <span class="live-dot"></span> SIGNAL ACTIVE <span class="status-coords">// 33.9249° S, 18.4241° E</span> // <span id="clock">--:--:--</span> SAST
       </div>
       <h1 class="hero-title">
         <span class="glitch" data-text="WE BUILD">WE BUILD</span>
@@ -103,13 +102,6 @@
     </div>
   </section>
 
-  <!-- Ticker -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>SYSTEM DETECTED</span><span>✦</span><span>CLAIM YOUR UPGRADE</span><span>✦</span><span>WE BUILD WHAT THEY CAN'T</span><span>✦</span><span>CAPE TOWN 021</span><span>✦</span><span>480 GSM HEAVYWEIGHT</span><span>✦</span><span>NIGHT RUN CLUB — THURSDAYS</span><span>✦</span><span>SHIP IT. DISAPPEAR.</span><span>✦</span>
-      <span>SYSTEM DETECTED</span><span>✦</span><span>CLAIM YOUR UPGRADE</span><span>✦</span><span>WE BUILD WHAT THEY CAN'T</span><span>✦</span><span>CAPE TOWN 021</span><span>✦</span><span>480 GSM HEAVYWEIGHT</span><span>✦</span><span>NIGHT RUN CLUB — THURSDAYS</span><span>✦</span><span>SHIP IT. DISAPPEAR.</span><span>✦</span>
-    </div>
-  </div>
 
   <main>
 
@@ -121,7 +113,7 @@
             <span class="kicker mono">[01] FIELD FOOTAGE</span>
             <h2 class="section-title">THE MOB</h2>
           </div>
-          <p class="section-lede">4–8 operators. Different directions. One signal. Ten minutes on the street, then gone. This is what a Code Drop looks like.</p>
+          <p class="section-lede">Different directions. One signal. Ten minutes on the street, then gone.</p>
         </div>
 
         <div class="mob-wall" id="mobWall">
@@ -167,7 +159,7 @@
 
     <!-- Split banner -->
     <section class="split-banner reveal">
-      <div class="split-img" style="background-image:url(img/night6.jpg)"></div>
+      <div class="split-img"><img class="bg" src="img/sm/night6.jpg" srcset="img/sm/night6.jpg 640w, img/night6.jpg 1400w" sizes="(min-width: 960px) 50vw, 100vw" alt="" loading="lazy" decoding="async"></div>
       <div class="split-copy">
         <span class="kicker mono">SCAN RECEIVED</span>
         <h2>YOU FOUND US.<br>NOW BUILD SOMETHING.</h2>
@@ -195,9 +187,10 @@
           <button class="filter" data-filter="kit">KIT</button>
         </div>
 
-        <div class="product-grid" id="productGrid">
+        <div class="product-grid rail" id="productGrid">
           <!-- filled by app.js -->
         </div>
+        <div class="rail-hint"><span>SWIPE →</span><span class="rail-dots" data-for="productGrid"></span></div>
       </div>
     </section>
 
@@ -213,7 +206,7 @@
         </div>
 
         <article class="course-feature reveal">
-          <div class="course-feature-img" style="background-image:url(img/code5.jpg)">
+          <div class="course-feature-img"><img class="bg" src="img/sm/code5.jpg" srcset="img/sm/code5.jpg 640w, img/code5.jpg 1400w" sizes="(min-width: 960px) 50vw, 100vw" alt="" loading="lazy" decoding="async">
             <span class="tag mono">FLAGSHIP // FULL ENROLLMENT</span>
           </div>
           <div class="course-feature-body">
@@ -236,15 +229,16 @@
           </div>
         </article>
 
-        <div class="course-grid" id="courseGrid">
+        <div class="course-grid rail" id="courseGrid">
           <!-- filled by app.js -->
         </div>
+        <div class="rail-hint"><span>SWIPE →</span><span class="rail-dots" data-for="courseGrid"></span></div>
       </div>
     </section>
 
     <!-- FITNESS -->
     <section class="section" id="fitness">
-      <div class="fitness-hero reveal" style="background-image:url(img/gym12.jpg)">
+      <div class="fitness-hero reveal"><img class="bg" src="img/sm/gym12.jpg" srcset="img/sm/gym12.jpg 640w, img/gym12.jpg 1400w" sizes="(min-width: 960px) 50vw, 100vw" alt="" loading="lazy" decoding="async">
         <div class="container">
           <span class="kicker mono">[04] SYNDICATE CONDITIONING</span>
           <h2 class="section-title xl">SHARP MIND.<br><span class="outline-text">HARD BODY.</span></h2>
@@ -253,9 +247,10 @@
       </div>
 
       <div class="container">
-        <div class="program-grid" id="programGrid">
+        <div class="program-grid rail" id="programGrid">
           <!-- filled by app.js -->
         </div>
+        <div class="rail-hint"><span>SWIPE →</span><span class="rail-dots" data-for="programGrid"></span></div>
 
         <div class="schedule reveal">
           <div class="schedule-head">
@@ -273,12 +268,12 @@
         </div>
 
         <div class="gym-strip reveal" aria-hidden="true">
-          <img src="img/gym4.jpg" alt="" loading="lazy">
-          <img src="img/gym10.jpg" alt="" loading="lazy">
-          <img src="img/gym8.jpg" alt="" loading="lazy">
-          <img src="img/run2.jpg" alt="" loading="lazy">
-          <img src="img/gym5.jpg" alt="" loading="lazy">
-          <img src="img/gym14.jpg" alt="" loading="lazy">
+          <img src="img/sm/gym4.jpg" srcset="img/sm/gym4.jpg 640w, img/gym4.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+          <img src="img/sm/gym10.jpg" srcset="img/sm/gym10.jpg 640w, img/gym10.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+          <img src="img/sm/gym8.jpg" srcset="img/sm/gym8.jpg 640w, img/gym8.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+          <img src="img/sm/run2.jpg" srcset="img/sm/run2.jpg 640w, img/run2.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+          <img src="img/sm/gym5.jpg" srcset="img/sm/gym5.jpg 640w, img/gym5.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+          <img src="img/sm/gym14.jpg" srcset="img/sm/gym14.jpg 640w, img/gym14.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -295,32 +290,32 @@
         </div>
 
         <div class="lifestyle-grid">
-          <div class="ls-big reveal" style="background-image:url(img/cpt3.jpg)">
+          <div class="ls-big reveal"><img class="bg" src="img/sm/cpt3.jpg" srcset="img/sm/cpt3.jpg 640w, img/cpt3.jpg 1400w" sizes="(min-width: 960px) 50vw, 100vw" alt="" loading="lazy" decoding="async">
             <div class="ls-cap">
               <span class="mono">JOURNAL // 001</span>
               <h3>THE CITY AFTER MIDNIGHT</h3>
               <p>Why the best work in Cape Town happens when the city goes quiet.</p>
             </div>
           </div>
-          <div class="ls-small reveal" style="background-image:url(img/cpt5.jpg)">
+          <div class="ls-small reveal"><img class="bg" src="img/sm/cpt5.jpg" srcset="img/sm/cpt5.jpg 640w, img/cpt5.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt="" loading="lazy" decoding="async">
             <div class="ls-cap">
               <span class="mono">JOURNAL // 002</span>
               <h3>LION'S HEAD, 05:00</h3>
             </div>
           </div>
-          <div class="ls-small reveal" style="background-image:url(img/code6.jpg)">
+          <div class="ls-small reveal"><img class="bg" src="img/sm/code6.jpg" srcset="img/sm/code6.jpg 640w, img/code6.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt="" loading="lazy" decoding="async">
             <div class="ls-cap">
               <span class="mono">JOURNAL // 003</span>
               <h3>NIGHT SHIFT SETUP</h3>
             </div>
           </div>
-          <div class="ls-small reveal" style="background-image:url(img/night1.jpg)">
+          <div class="ls-small reveal"><img class="bg" src="img/sm/night1.jpg" srcset="img/sm/night1.jpg 640w, img/night1.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt="" loading="lazy" decoding="async">
             <div class="ls-cap">
               <span class="mono">JOURNAL // 004</span>
               <h3>WHY WE WEAR BLACK</h3>
             </div>
           </div>
-          <div class="ls-small reveal" style="background-image:url(img/cpt1.jpg)">
+          <div class="ls-small reveal"><img class="bg" src="img/sm/cpt1.jpg" srcset="img/sm/cpt1.jpg 640w, img/cpt1.jpg 1400w" sizes="(min-width: 960px) 25vw, 100vw" alt="" loading="lazy" decoding="async">
             <div class="ls-cap">
               <span class="mono">JOURNAL // 005</span>
               <h3>021 IS THE BLUEPRINT</h3>
@@ -345,9 +340,9 @@
     <!-- Crew banner -->
     <section class="crew-banner reveal">
       <div class="crew-imgs" aria-hidden="true">
-        <img src="img/crew4.jpg" alt="" loading="lazy">
-        <img src="img/crew3.jpg" alt="" loading="lazy">
-        <img src="img/crew1.jpg" alt="" loading="lazy">
+        <img src="img/sm/crew4.jpg" srcset="img/sm/crew4.jpg 640w, img/crew4.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+        <img src="img/sm/crew3.jpg" srcset="img/sm/crew3.jpg 640w, img/crew3.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
+        <img src="img/sm/crew1.jpg" srcset="img/sm/crew1.jpg 640w, img/crew1.jpg 1400w" sizes="(min-width: 960px) 34vw, 50vw" alt="" loading="lazy" decoding="async">
       </div>
       <div class="crew-copy">
         <span class="kicker mono">RECRUITMENT // OPEN</span>
@@ -373,7 +368,7 @@
 
         <form class="access-form reveal" id="accessForm" novalidate>
           <div class="form-head mono"><span class="live-dot"></span> ENCRYPTED CHANNEL // SESSION <span id="sessionId">----</span></div>
-          <label>CALLSIGN / NAME<input name="name" required autocomplete="name" placeholder="Your name"></label>
+          <label>CALLSIGN / NAME<input name="name" required autocomplete="name" enterkeyhint="next" placeholder="Your name"></label>
           <label>BUSINESS / BRAND<input name="business" autocomplete="organization" placeholder="Optional"></label>
           <label>MISSION TYPE
             <select name="type" id="missionType">
@@ -426,6 +421,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Mobile tab bar -->
+  <nav class="tabbar mono" id="tabbar" aria-label="Sections">
+    <a href="#mob" data-sec="mob"><i>◉</i>MOB</a>
+    <a href="#merch" data-sec="merch"><i>▣</i>MERCH</a>
+    <a href="#academy" data-sec="academy"><i>⌘</i>LEARN</a>
+    <a href="#fitness" data-sec="fitness"><i>✚</i>FIT</a>
+    <a href="#lifestyle" data-sec="lifestyle"><i>☾</i>LIFE</a>
+    <a href="#access" data-sec="access" class="tab-hot"><i>⚿</i>ACCESS</a>
+  </nav>
 
   <!-- Cart Drawer -->
   <aside class="cart-drawer" id="cartDrawer" aria-label="Cart">

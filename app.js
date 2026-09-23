@@ -80,27 +80,23 @@
   ];
 
   const MOB = [
-    ['mob2', 'tall', 'GHOST'], ['night11', 'wide', 'FORMATION'], ['mob7', 'sq', 'SIGNAL'], ['hood5', 'tall', 'OPERATOR'],
-    ['mob4', 'sq', 'THE CREW'], ['night4', 'tall', 'CONVERGE'], ['mob1', 'tall', 'BLACKOUT'], ['hood13', 'sq', 'NIGHT SHIFT'],
-    ['night6', 'tall', 'EXTRACTION'], ['mob8', 'wide', 'WATCH'], ['mob5', 'sq', 'NO FACE'], ['run4', 'tall', 'HORIZON'],
-    ['night3', 'wide', 'CORRIDOR'], ['mob9', 'sq', 'SMOKE'], ['hood6', 'tall', 'SILENT'], ['night9', 'wide', 'CITY GRID'],
-    ['mob3', 'sq', 'MASKED'], ['crew3', 'tall', 'HOODED'], ['night8', 'wide', 'AFTER DARK'], ['hood7', 'sq', 'HEADS DOWN']
+    ['mob2', 'GHOST'], ['night4', 'CONVERGE'], ['hood5', 'OPERATOR'],
+    ['mob8', 'WATCH'], ['mob1', 'BLACKOUT'], ['hood6', 'SILENT']
   ];
 
   /* ---------------- RENDER ---------------- */
   const img = (name) => `img/${name}.jpg`;
+  const sm = (name) => `img/sm/${name}.jpg`;
+  // Phones get the 640px file; larger screens pick the full-size one
+  const pic = (name, sizes, extra = '') =>
+    `<img src="${sm(name)}" srcset="${sm(name)} 640w, ${img(name)} 1400w" sizes="${sizes}" ${extra} loading="lazy" decoding="async">`;
 
   function renderMob() {
-    const wall = $('#mobWall');
-    wall.innerHTML = MOB.map(([src, shape, label], i) => {
-      const n = String(i + 1).padStart(2, '0');
-      const t = `${String(19 + (i % 5)).padStart(2, '0')}:${String((i * 17) % 60).padStart(2, '0')}`;
-      return `<figure class="mob-item ${shape} reveal" data-i="${i}">
-        <img src="${img(src)}" alt="API Syndicate operator — ${label.toLowerCase()}" loading="lazy">
-        <span class="rec">REC ${t}</span>
-        <figcaption class="meta"><b>${label}</b><small>FRAME ${n} / ${String(MOB.length).padStart(2, '0')}</small></figcaption>
-      </figure>`;
-    }).join('');
+    $('#mobWall').innerHTML = MOB.map(([src, label], i) => `
+      <figure class="mob-item reveal" data-i="${i}">
+        ${pic(src, '(min-width: 640px) 33vw, 50vw', `alt="API Syndicate — ${label.toLowerCase()}"`)}
+        <figcaption class="meta">${label}</figcaption>
+      </figure>`).join('');
   }
 
   function renderProducts() {
@@ -109,10 +105,10 @@
         <div class="product-thumb">
           <span class="badge ${p.hot ? 'hot' : ''}">${p.badge}</span>
           ${p.stock ? `<span class="stock">${p.stock}</span>` : ''}
-          <img class="main-img" src="${img(p.imgs[0])}" alt="${esc(p.name)}" loading="lazy">
+          ${pic(p.imgs[0], '(min-width: 960px) 25vw, (min-width: 640px) 46vw, 82vw', `class="main-img" alt="${esc(p.name)}"`)}
         </div>
         <div class="gallery-strip">
-          ${p.imgs.map((s, i) => `<img class="gallery-thumb ${i === 0 ? 'active' : ''}" src="${img(s)}" alt="${esc(p.name)} view ${i + 1}" loading="lazy">`).join('')}
+          ${p.imgs.map((s, i) => `<img class="gallery-thumb ${i === 0 ? 'active' : ''}" src="${sm(s)}" data-full="${s}" alt="${esc(p.name)} view ${i + 1}" loading="lazy" decoding="async">`).join('')}
         </div>
         <div class="product-body">
           <h3 class="product-name">${p.name}</h3>
@@ -129,7 +125,7 @@
   function renderCourses() {
     $('#courseGrid').innerHTML = COURSES.filter((c) => !c.featured).map((c) => `
       <article class="course-card reveal">
-        <div class="img" style="background-image:url(${img(c.img)})"><span class="tag mono">${c.tag}</span></div>
+        <div class="img">${pic(c.img, '(min-width: 960px) 33vw, (min-width: 640px) 46vw, 84vw', 'class="bg" alt=""')}<span class="tag mono">${c.tag}</span></div>
         <div class="body">
           <h3>${c.name}</h3>
           <p>${c.desc}</p>
@@ -145,7 +141,7 @@
   function renderPrograms() {
     $('#programGrid').innerHTML = PROGRAMS.map((p) => `
       <article class="program reveal">
-        <img src="${img(p.img)}" alt="${esc(p.name)}" loading="lazy">
+        ${pic(p.img, '(min-width: 1200px) 25vw, (min-width: 640px) 46vw, 80vw', `alt="${esc(p.name)}"`)}
         <div class="content">
           <span class="tag mono">${p.tag}</span>
           <h3>${p.name}</h3>
@@ -191,7 +187,7 @@
       items.innerHTML = cart.map((i, idx) => {
         const p = CATALOG[i.id];
         return `<div class="cart-item">
-          <img src="${img(p.img)}" alt="">
+          <img src="${sm(p.img)}" alt="">
           <div>
             <div class="cart-item-name">${p.name}</div>
             <div class="cart-item-sub">${i.size ? i.size + ' · ' : ''}${p.price ? fmt(p.price) : 'FREE'}</div>
@@ -219,8 +215,6 @@
   function closeAll() {
     $('#cartDrawer').classList.remove('open');
     $('#backdrop').classList.remove('visible');
-    $('#mainNav').classList.remove('open');
-    $('#menuBtn').classList.remove('open');
   }
 
   /* ---------------- TOAST ---------------- */
@@ -238,7 +232,7 @@
   function openLightbox(i) {
     lbIndex = (i + MOB.length) % MOB.length;
     const [src, , label] = MOB[lbIndex];
-    $('#lbImg').src = img(src);
+    $('#lbImg').src = window.innerWidth < 640 ? sm(src) : img(src);
     $('#lbImg').alt = label;
     $('#lbCap').textContent = `${label} // FRAME ${String(lbIndex + 1).padStart(2, '0')} OF ${MOB.length}`;
     $('#lightbox').classList.add('open');
@@ -255,7 +249,12 @@
       const card = thumb.closest('.product-card');
       const main = $('.main-img', card);
       main.style.opacity = 0;
-      setTimeout(() => { main.src = thumb.src; main.style.opacity = 1; }, 150);
+      setTimeout(() => {
+        const n = thumb.dataset.full;
+        main.srcset = `${sm(n)} 640w, ${img(n)} 1400w`;
+        main.src = sm(n);
+        main.style.opacity = 1;
+      }, 150);
       $$('.gallery-thumb', card).forEach((g) => g.classList.toggle('active', g === thumb));
       return;
     }
@@ -281,6 +280,7 @@
       const f = filter.dataset.filter;
       $$('.filter').forEach((b) => b.classList.toggle('active', b === filter));
       $$('.product-card').forEach((c) => c.classList.toggle('hide', f !== 'all' && c.dataset.cat !== f));
+      $('#productGrid').dispatchEvent(new Event('railchange'));
       return;
     }
 
@@ -302,16 +302,11 @@
     const intent = t.closest('[data-intent]');
     if (intent) { $('#missionType').value = intent.dataset.intent; }
 
-    if (t.closest('.main-nav a')) closeAll();
   });
 
   $('#cartBtn').addEventListener('click', openCart);
   $('#closeCart').addEventListener('click', closeAll);
   $('#backdrop').addEventListener('click', closeAll);
-  $('#menuBtn').addEventListener('click', () => {
-    const open = $('#mainNav').classList.toggle('open');
-    $('#menuBtn').classList.toggle('open', open);
-  });
 
   $('#checkoutWa').addEventListener('click', () => {
     window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(orderText())}`, '_blank', 'noopener');
@@ -367,7 +362,7 @@
       '> locating operators ................. <b>8 ONLINE</b>',
       '> region ............................. <b>CPT-021</b>',
       '> decrypting drop payload ............ <b>OK</b>',
-      '<i>> SYSTEM DETECTED. CLAIM YOUR UPGRADE.</i>'
+      '<i>> WE BUILD WHAT THEY CAN&#39;T.</i>'
     ];
     let i = 0;
     const next = () => {
@@ -446,6 +441,50 @@
     $$('.reveal').forEach((r) => io.observe(r));
   }
 
+  // Highlight the current section in the phone tab bar and desktop nav
+  function activeSection() {
+    const links = $$('.tabbar a, .main-nav a');
+    const ids = [...new Set(links.map((a) => a.getAttribute('href').slice(1)))];
+    const secs = ids.map((id) => document.getElementById(id)).filter(Boolean);
+    if (!('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((entries) => entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      links.forEach((a) => a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    secs.forEach((s) => io.observe(s));
+  }
+
+  // Progress dots under each swipe rail (phones/tablets)
+  function railDots() {
+    $$('.rail-dots').forEach((dots) => {
+      const rail = document.getElementById(dots.dataset.for);
+      const draw = () => {
+        const items = [...rail.children].filter((c) => !c.classList.contains('hide'));
+        if (dots.childElementCount !== items.length) dots.innerHTML = items.map(() => '<i></i>').join('');
+        const step = items[1] ? items[1].offsetLeft - items[0].offsetLeft : 1;
+        const idx = Math.min(items.length - 1, Math.round(rail.scrollLeft / step));
+        [...dots.children].forEach((d, i) => d.classList.toggle('on', i === idx));
+      };
+      rail.addEventListener('scroll', () => requestAnimationFrame(draw), { passive: true });
+      rail.addEventListener('railchange', () => { rail.scrollLeft = 0; draw(); });
+      draw();
+    });
+  }
+
+  // Swipe left/right between photos in the lightbox
+  function lightboxSwipe() {
+    const lb = $('#lightbox');
+    let x0 = null, y0 = 0;
+    lb.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      if (x0 === null) return;
+      const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) openLightbox(lbIndex + (dx < 0 ? 1 : -1));
+      else if (dy > 90) closeLightbox();
+      x0 = null;
+    }, { passive: true });
+  }
+
   /* ---------------- INIT ---------------- */
   renderMob();
   renderProducts();
@@ -458,6 +497,9 @@
   countdown();
   glitchLoop();
   reveals();
+  activeSection();
+  railDots();
+  lightboxSwipe();
   $('#year').textContent = new Date().getFullYear();
   $('#sessionId').textContent = Math.random().toString(16).slice(2, 8).toUpperCase();
 })();
