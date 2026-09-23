@@ -6,4 +6,4 @@ A one-page landing site for API Syndicate, the street division of [BuildsByBucha
 - `style.css`: styles, using BuildsByBuchanan's brand (DM Sans / DM Mono, #8ABF3C)
 - `img/`: crew photos from Unsplash (`img/sm/` has the 640px versions for phones)
 
-Contact buttons go to WhatsApp (+27 79 268 6620) and info@buildsbybuchanan.com.
+The contact button goes to WhatsApp (+27 79 268 6620).
